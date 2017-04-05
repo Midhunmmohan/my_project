@@ -1,0 +1,228 @@
+@import "compass";
+
+html, body {
+  margin: 0;
+}
+
+$web-font: 'Roboto Condensed',sans-serif;
+$orange: #ff6347;
+$white: #fff;
+
+.home {
+  .navbar {
+    @include border-radius(0px);
+    min-height: 7rem;
+    background: rgba(74, 121, 243, 0.01);
+    border: none;
+    .navbar-brand {
+      height: 7rem;
+      padding: 2.5rem 2rem;
+      font-size: 4.5rem;
+      line-height: 2rem;
+      color: $white;  
+    }
+    li
+    {
+      &.active, &:hover {
+        a {
+          color: $white;
+          background-color: $orange;
+        }
+      }
+      a {        
+        font-size: 1.7rem;
+        font-weight: 500;
+        font-family: $web-font;
+        color: $white;
+        line-height: 4rem;
+        @include transition(.5s ease-in);
+
+      }
+    }
+  }
+  .carousel {
+    .item{
+      img {
+        width: 100%;
+        height: 800px;
+      }
+    }
+  }
+  .home_welcome {
+    margin: 30px 0px;
+    .page-header {
+      margin: 50px 0 20px;
+      border: none;
+      padding-bottom: 0px;
+      h1 {
+        font-family: $web-font;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 45px;
+        color: tomato;
+        margin: 0px;
+      }
+    }
+    p {
+      font-family: $web-font;
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 2.5rem;
+    }
+    .welcome_icons { 
+      &:hover {
+        i {
+          background-color:$orange;
+          color: $white !important;
+          font-size: 4rem !important;
+        }
+      }
+      margin: 40px 0px;
+      .icons {
+        width: 100%;
+        text-align: center;
+        i {
+          width: 8rem;
+          height: 8rem;
+          line-height: 3rem;
+          font-size: 3.5rem;
+          @include border-radius(50%);
+          color: #1b1d41;
+          border: 2px solid $orange;
+          @include transition(.4s ease-in);
+          &:before {
+            position:relative;
+            top: 26px;
+          }
+        }
+        p {
+          padding: 20px 0px;
+          text-align: justify;
+        }
+      }
+    }
+  }
+  .full-width-background {
+    background: url("../images/background.jpg") no-repeat center fixed;
+    background-size: cover;
+    .inner-background {
+      padding: 5rem 0px;
+      h1 {
+        text-align: center;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-family: $web-font;
+        @media screen and (min-width: 320px) and (max-width: 620px) {
+          font-size: 2.4rem; 
+        }
+      }
+      p {
+        font-family: $web-font;
+        text-align: center;
+        line-height: 2.5rem;
+        font-size: 1.5rem;
+        color: $white; 
+        padding-top: 2.5rem;
+      }
+      .backgroudn-btn {
+        button {
+          display: block;
+          margin: 0px auto;
+          width: 25%;
+          border: 1px solid $orange;
+          @include border-radius(3px);
+          background-color: $orange;
+          margin-top: 2.5rem;
+          color: $white;
+          font-size: 2rem;
+          font-family: $web-font;
+          @include transition(.4s ease-in);
+          &:hover {
+            background-color:rgba(255, 99, 71, 0.18) !important;
+            border: 1px solid $white;
+          }
+          @media screen and (min-width: 320px) and (max-width: 620px) {
+            width: 42%;
+          }
+        }
+      }
+    }
+  }
+  .service-section {
+    margin: 5rem 0px;
+    .m-t-10 {
+      margin-top: 10rem;
+      @media screen and (min-width: 320px) and (max-width: 620px) {
+        margin-top: 0;
+      }
+      .Services {
+          &:hover {
+            i {
+              color:$white;
+              background-color: $orange;
+              border: 2px solid $orange;
+            }
+          }
+        width: 100%;
+        float: left;
+        padding: 4rem 0px;
+        i {
+          width: 8rem;
+          height: 8rem;
+          line-height: 3rem;
+          font-size: 3.5rem;
+          @include border-radius(50%);
+          color: $orange;
+          border: 2px solid #cac4c3;
+          text-align: center;
+          @include transition(.4s ease-in);
+          &:before {
+            position:relative;
+            top: 26px;
+          }
+          @media screen and (min-width: 320px) and (max-width: 620px) {
+            width: 6rem;
+            height: 6rem;
+            line-height: 1rem;
+            font-size: 3.5rem;
+          }
+        }
+        h3 {
+          margin: 0px 0px 1rem;
+          font-family: $web-font;
+          font-size: 2.1rem;
+          font-weight: 500,
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: 400;
+          font-family: $web-font;
+        }
+      }
+    }
+  }
+  .footer-section {
+    padding: 2rem 0px;
+    background: #000;
+    ul {
+      text-align: center;
+      padding: 0px;
+      li {
+        display: inline-block;
+        padding: 0px 10px;
+        i {
+          color: $white;
+          font-size: 20px;
+        }
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 15px;
+      font-family: $web-font;
+      color: $white;
+      margin:0px;
+    }
+  }
+} 
