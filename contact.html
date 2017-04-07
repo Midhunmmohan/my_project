@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="home">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right  ">
+          <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <section class="page-title" style="background-image:url(images/pagetittle.jpg);">
+      <div class="auto-container">
+        <h2>Contact Us</h2>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <form id="signupForm">
+              <div class="form-group">  
+                <input type="text" name="firstname" id="firstname" value="" placeholder="First Name">
+              </div>
+
+              <div class="form-group">  
+                <input type="text" name="lastname" id="lastname" value="" placeholder="Last Name">
+              </div>
+
+              <div class="form-group">
+                <input type="email" name="email" id="email" value="" placeholder="Email">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="phone" value="" placeholder="Phone">
+              </div>
+
+              <div class="form-group>
+                <label class="radio-inline">
+                  <input type="radio" name="Male" id="Male" value="option1"> Male
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Female " id="Female" value="option2"> Female
+                </label>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="address" id="address" value="" placeholder="Address">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="city" id="city" value="" placeholder="city">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="state" id="state" value="" placeholder="state">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="Country" id="Country" value="" placeholder="Country">
+              </div>
+
+              <div class="form-group">
+                <input type="file" id="exampleInputFile">
+              </div>
+
+              <div class="form-group">
+                <input type="password" name="password" id="password" value="" placeholder="password">
+              </div>
+
+              <div class="form-group">
+                <input type="password" name="Confirm_password" id="Confirm_password" value="" placeholder="Confirm password">
+              </div>
+
+              <div class="form-group text-center">
+                <input class="submit" type="submit" value="Submit">
+              </div>
+            </form>  
+          </div>
+        </div>
+      </div>  
+    </section>
+
+    <section class="footer-section">
+      <div class="container">
+        <div class="col-md-12">
+          <ul>
+            <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+            <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+            <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+            <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+          </ul>
+          <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 All right reserved.</p>
+        </div>  
+      </div>
+    </section>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+  <script type="text/javascript">
+  $.validator.setDefaults({
+    submitHandler: function() {
+      alert("submitted!");
+    }
+  });
+
+  $().ready(function() {
+
+    // validate signup form on keyup and submit
+    $("#signupForm").validate({
+      rules: {
+        firstname: "required",
+        lastname: "required",
+        phone: {
+          required: true,
+          minlength: 2
+        },
+        password: {
+          required: true,
+          maxlength: 5
+        },
+        confirm_password: {
+          required: true,
+          maxlength: 5,
+          equalTo: "#password"
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        address: {
+          required: true,
+        },
+        city: {
+          required: true,
+        },
+        state: {
+          required: true,
+        },
+        Country: {
+          required: true
+        },
+        agree: "required"
+      },
+      messages: {
+        firstname: "Please enter your firstname",
+        lastname: "Please enter your lastname",
+        username: {
+          required: "Please enter a username",
+          minlength: "Your username must consist of at least 2 characters"
+        },
+        password: {
+          required: "Please provide a password",
+          minlength: "Your password must be at least 5 characters long"
+        },
+        confirm_password: {
+          required: "Please provide a password",
+          minlength: "Your password must be at least 5 characters long",
+          equalTo: "Please enter the same password as above"
+        },
+        email: "Please enter a valid email address",
+        address: {
+          required: "Please provide a password",
+        }
+        agree: "Please accept our policy",
+        topic: "Please select at least 2 topics"
+      }
+    });
+
+    //code to hide topic selection, disable for demo
+    var newsletter = $("#newsletter");
+    // newsletter topics are optional, hide at first
+    var inital = newsletter.is(":checked");
+    var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
+    var topicInputs = topics.find("input").attr("disabled", !inital);
+    // show when newsletter is checked
+    newsletter.click(function() {
+      topics[this.checked ? "removeClass" : "addClass"]("gray");
+      topicInputs.attr("disabled", !this.checked);
+    });
+  });
+  </script>
+
+  <script>
+    $(document).ready(function(){
+      $(window).scroll(function() { 
+        if ($(document).scrollTop() > 500) { 
+          $(".navbar-fixed-top").css("background-color", "rgba(152, 52, 52, 0.65)", "transition", "(.6s ease-in)"); 
+        } else {
+          $(".navbar-fixed-top").css("background-color", "transparent"); 
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -225,4 +225,51 @@ $white: #fff;
       margin:0px;
     }
   }
+  .page-title {
+    position: relative;
+    padding: 9.5rem;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    h2 {
+      position: relative;
+      color: rgba(255, 99, 71, 0.72);
+      font-size: 3.5rem;
+      font-weight: 700;
+      font-family: $web-font;
+      top: 5rem;
+    }
+  }
+  .contact-section {
+    margin: 8rem 0px;
+    form {
+      input[type="text"] {
+        display: block;
+        width: 100%;
+        line-height: 22px;
+        height: 45px;
+        font-size: 13px;
+        border: 1px solid #e2e2e2;
+        padding: 10px 15px 10px 22px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        @include transition(all 500ms ease);
+      }
+      input[type="email"] {
+        @extend input[type="text"];
+      }
+
+      input[type="password"] {
+        @extend input[type="text"];
+      }
+
+      textarea {
+        @extend input[type="text"];
+        height: 14rem;
+        margin-bottom:1rem;
+      }
+    }
+  }
 } 
