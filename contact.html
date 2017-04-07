@@ -25,10 +25,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right  ">
-          <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li  class="active"><a href="contact.html">Contact Us</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -61,12 +61,12 @@
                 <input type="text" name="phone" id="phone" value="" placeholder="Phone">
               </div>
 
-              <div class="form-group>
+              <div class="form-group">
                 <label class="radio-inline">
-                  <input type="radio" name="Male" id="Male" value="option1"> Male
+                  <input type="radio" class="attrInputs" name="gender" id="gender_male" value="option1"> Male
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="Female " id="Female" value="option2"> Female
+                  <input type="radio" class="attrInputs" name="gender" id="gender_female" value="option2"> Female
                 </label>
               </div>
 
@@ -127,13 +127,14 @@
   <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 
   <script type="text/javascript">
-  $.validator.setDefaults({
-    submitHandler: function() {
-      alert("submitted!");
-    }
-  });
+    $.validator.setDefaults({
+      submitHandler: function() {
+        alert("submitted!");
+        return;
+      }
+    });
 
-  $().ready(function() {
+    $().ready(function() {
 
     // validate signup form on keyup and submit
     $("#signupForm").validate({
@@ -146,11 +147,11 @@
         },
         password: {
           required: true,
-          maxlength: 10
+          minlength: 5
         },
         Confirm_password: {
           required: true,
-          maxlength: 10,
+          minlength: 5,
           equalTo: "#password"
         },
         email: {
@@ -174,7 +175,10 @@
         },
         inputFile: {
           required: true
-        }
+        },
+        gender:{
+          required: true
+        }, 
       },
       messages: {
         firstname: "* Please enter your firstname *",
@@ -187,7 +191,7 @@
           required: "* Please provide a password *",
           minlength: "* Your password must be at least 5 characters long *"
         },
-        confirm_password: {
+        Confirm_password: {
           required: "* Please provide a password *",
           minlength: "* Your password must be at least 5 characters long *",
           equalTo: "* Please enter the same password as above *"
@@ -205,40 +209,28 @@
         Country: {
           required: "* Please provide a Country *"
         },
-        agree: "* Please accept our policy *",
-        topic: "* Please select at least 2 topics *"
+        inputFile: {
+          required: "*Please add a file *"
+        },
+        gender: {
+          required: "*Please select your gender*"
+        }
+      }
+    });
+  }); 
+</script>
+
+<script>
+  $(document).ready(function(){
+    $(window).scroll(function() { 
+      if ($(document).scrollTop() > 100) { 
+        $(".navbar-fixed-top").css("background-color", "rgba(152, 52, 52, 0.65)", "transition", "(.5s ease-in)"); 
+      } else {
+        $(".navbar-fixed-top").css("background-color", "transparent"); 
       }
     });
   });
-
-//   $('#signupForm').submit(function(event) {
-//    var file = $('input[type=file]').val();       
-
-//    if ( ! file) {
-//        alert('The file is required.');
-//        event.preventDefault();
-//        return;
-//    } 
-
-//    if (file.match(/\.(?:csv|xl)$/)) {
-//        alert('CSV or Excel files only!');
-//        event.preventDefault();
-//    }
-
-// });
-  </script>
-
-  <script>
-    $(document).ready(function(){
-      $(window).scroll(function() { 
-        if ($(document).scrollTop() > 500) { 
-          $(".navbar-fixed-top").css("background-color", "rgba(152, 52, 52, 0.65)", "transition", "(.6s ease-in)"); 
-        } else {
-          $(".navbar-fixed-top").css("background-color", "transparent"); 
-        }
-      });
-    });
-  </script>
+</script>
 
 </body>
 </html>
