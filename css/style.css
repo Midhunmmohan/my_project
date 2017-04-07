@@ -208,7 +208,7 @@ html, body {
     top: 5rem; }
 .home .contact-section {
   margin: 8rem 0px; }
-  .home .contact-section form input[type="text"], .home .contact-section form input[type="email"], .home .contact-section form input[type="password"], .home .contact-section form textarea {
+  .home .contact-section form input[type="text"], .home .contact-section form input[type="email"], .home .contact-section form input[type="password"], .home .contact-section form textarea, .home .contact-section form select {
     display: block;
     width: 100%;
     line-height: 22px;
@@ -221,14 +221,21 @@ html, body {
     -moz-transition: all 500ms ease;
     -o-transition: all 500ms ease;
     -webkit-transition: all 500ms ease;
-    transition: all 500ms ease; }
+    transition: all 500ms ease;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; }
   .home .contact-section form textarea {
-    height: 14rem;
+    height: 10.8rem;
     margin-bottom: 1rem; }
   .home .contact-section form label#gender-error {
     float: right;
     left: 7px;
     position: relative; }
+  .home .contact-section form label.error {
+    font-size: 1.2rem;
+    color: red;
+    font-family: "Roboto Condensed", sans-serif; }
   .home .contact-section form input[type="submit"] {
     float: left;
     border: none;

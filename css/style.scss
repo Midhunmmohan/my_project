@@ -257,6 +257,7 @@ $white: #fff;
         font-weight: 400;
         font-family: 'Roboto', sans-serif;
         @include transition(all 500ms ease);
+        @include border-radius(3px); 
       }
       input[type="email"] {
         @extend input[type="text"];
@@ -268,14 +269,22 @@ $white: #fff;
 
       textarea {
         @extend input[type="text"];
-        height: 14rem;
+        height: 10.8rem;
         margin-bottom:1rem;
+      }
+      select {
+        @extend input[type="text"]; 
       }
       label {
         &#gender-error {
           float: right;
           left: 7px;
           position: relative;
+        }
+        &.error {
+          font-size: 1.2rem;
+          color: red;
+          font-family: $web-font;
         }
       }
       input[type="submit"] {
