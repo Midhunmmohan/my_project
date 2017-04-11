@@ -256,5 +256,10 @@ html, body {
       -moz-box-shadow: 0px 1px 5px #000;
       -webkit-box-shadow: 0px 1px 5px #000;
       box-shadow: 0px 1px 5px #000; }
+.home .services-section {
+  margin: 8rem 0px; }
+  .home .services-section #chart .c3-line-data2 {
+    stroke-width: 5px;
+    stroke-color: #000; }
 
 /*# sourceMappingURL=style.css.map */

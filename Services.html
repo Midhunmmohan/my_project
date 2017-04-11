@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/c3.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="home">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right  ">
+            <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">About Us</a></li>
+            <li class="active"><a href="Services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <section class="page-title" style="background-image:url(images/pagetittle.jpg);">
+      <div class="auto-container">
+        <h2>Services</h2>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="chart"></div>
+            <div id="charts"></div>
+          </div>
+        </div>
+      </div>  
+    </section>
+
+    <section class="footer-section">
+      <div class="container">
+        <div class="col-md-12">
+          <ul>
+            <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+            <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+            <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+            <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+          </ul>
+          <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 All right reserved.</p>
+        </div>  
+      </div>
+    </section>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+  <script type="text/javascript" src="js/c3.min.js"></script>
+  <script type="text/javascript" src="js/d3.v3.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var charts = c3.generate({
+        bindto: '#chart',
+        data: {
+          columns: [
+             ['data1', 30, 200, 100, 400, 150, 250],
+             ['data2', 50, 20, 10, 40, 15, 25]
+          ],
+          axes: {
+            data2: 'y2' 
+          } 
+        },
+        axis: {
+          y: {
+            label: {
+              text: 'Y Label',
+              position: 'outer-middle'
+            },
+            tick: {
+              format: d3.format("$,")
+            }
+          },
+          y2: {
+            show:true,
+            label: {
+              text: 'Y2 Label',
+              position: 'outer-middle'
+            }
+          }
+        }
+      });
+
+      setTimeout(function () {
+        charts.load({
+          columns: [
+            ['data1', 230, 190, 300, 500, 300, 400]
+          ]
+        });
+      }, 1000);
+
+      setTimeout(function () {
+        charts.load({
+          columns: [
+            ['data3', 130, 150, 200, 300, 200, 100]
+          ]
+        });
+      }, 1500);
+
+      setTimeout(function () {
+        charts.unload({
+          ids: 'data1'
+        });
+      }, 2000);
+
+      var chart = c3.generate({
+        bindto: '#charts',
+        data: {
+          columns: [
+             ['data1', 30, 200, 100, 400, 150, 250],
+             ['data2', 50, 20, 10, 40, 15, 25]
+          ],
+          axes: {
+            data2: 'y2' 
+          },
+          types: {
+            data2: 'bar'
+          } 
+        },
+        axis: {
+          y: {
+            label: {
+              text: 'Y Label',
+              position: 'outer-middle'
+            },
+            tick: {
+              format: d3.format("$,")
+            }
+          },
+          y2: {
+            show:true,
+            label: {
+              text: 'Y2 Label',
+              position: 'outer-middle'
+            }
+          }
+        }
+      });
+
+      setTimeout(function () {
+        chart.load({
+          columns: [
+            ['data1', 230, 190, 300, 500, 300, 400]
+          ]
+        });
+      }, 1000);
+
+
+      setTimeout(function () {
+        chart.load({
+          columns: [
+            ['data3', 130, 150, 200, 300, 200, 100]
+          ]
+        });
+      }, 1500);
+
+      setTimeout(function () {
+        chart.unload({
+          ids: 'data1'
+        });
+      }, 2000);
+
+    });  
+  </script>
+
+<script>
+  $(document).ready(function(){
+    $(window).scroll(function() { 
+      if ($(document).scrollTop() > 100) { 
+        $(".navbar-fixed-top").css("background-color", "rgba(152, 52, 52, 0.65)", "transition", "(.5s ease-in)"); 
+      } else {
+        $(".navbar-fixed-top").css("background-color", "transparent"); 
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
