@@ -83,21 +83,19 @@
       var charts = c3.generate({
         bindto: '#chart',
         data: {
-          x: 'x',
           columns: [
-          ['x','cat1', 'cat2', 'cat3', 'cat4', 'cat5', 'cat6'],
-          ['data1', 30, 200, 100, 400, 150, 250],
+            ['data1', 30, 200, 100, 400, 150, 250]
           ],
           type: 'line',
-          x: 'x',
           colors: {
             data1: '#ff0000',
+            data2: '#ff0000',
           }, 
         },
         axis: {
           y: {
             tick: {
-              format: d3.format("$,")
+              format: d3.format("$")
             }
           },
         }
@@ -106,7 +104,8 @@
       setTimeout(function () {
         charts.load({
           columns: [
-          ['data1', 230, 190, 300, 500, 300, 400]
+            ['data1', 230, 190, 300, 500, 300, 400],  
+            ['data2', 220, 100, 350, 510, 220, 610]
           ]
         });
       }, 1000);
@@ -246,7 +245,10 @@
         var area = c3.generate({
           bindto: '#area',
           data: {
+            x:'x',
+            xFormat:'%Y',
             columns: [
+            ['x', '2010', '2011', '2012', '2013', '2014', '2015'],
             ['data1', 30,100,250,140,160,250],
             ['data2', 120,200,420,30,250,370],
             ],
@@ -254,6 +256,15 @@
             colors: {
               data1: '#ff6347',
               data2: '#47ff66',
+            }
+          },
+          axis:{
+            x: {
+              type:'timeseries',
+              localtime:false,
+              tick: {
+                format: '%H:%M:%S'
+              }
             }
           },
           grid: {
