@@ -260,6 +260,6 @@ html, body {
   margin: 8rem 0px; }
   .home .services-section #chart .c3-line-data2 {
     stroke-width: 5px;
-    stroke-color: #000; }
+    stroke: #000; }
 
 /*# sourceMappingURL=style.css.map */
