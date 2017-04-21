@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right  ">
             <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li class="active"><a href="Services.html">Services</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
@@ -89,7 +89,7 @@
           type: 'line',
           colors: {
             data1: '#ff0000',
-            data2: '#ff0000',
+            data2: '#ff47a4',
           }, 
         },
         axis: {
@@ -134,6 +134,9 @@
             tick: {
               format: d3.format("$,")
             }
+          },
+          bar:{
+            width: 50
           },
           y2: {
             show:true,
@@ -267,6 +270,7 @@
               }
             }
           },
+          
           grid: {
             x: {
               lines:[
