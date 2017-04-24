@@ -75,42 +75,54 @@ function getRandomColor() {
   		green = colorsOnly[1],
   		blue = colorsOnly[2],
 
-  		r = parseInt (red + 52),
-  		g = green - 25,
-  		b = blue - 100;
+  		r = parseInt (red + 40),
+  		g = parseInt (green + 40),
+  		b = parseInt (blue - 40);
 
   		var color = "rgb"+ '(' + r +','+ g +','+ b +')';
 
 			var colors = color.substring(color.indexOf('(') + 1, color.lastIndexOf(')')).split(/,\s*/);
-  		red1 = colors[0],
+  		var red1 = colors[0],
   		green1 = colors[1],
   		blue1 = colors[2],
   		
-  		r1 = red1 - 52,
+  		r1 = parseInt (red1 - 500),
   		g1 = green1 - 25,
-  		b1 = blue1 - 100;
+  		b1 = blue1 - 10;
 
   		var color1 = "rgb"+ '(' + r1 +','+ g1 +','+ b1 +')';
 
   		var color2 = "rgb"+ '(' + red +','+ green +','+ blue +')'; 
   		
   		var nextcolor = color2.substring(color2.indexOf('(') + 1, color2.lastIndexOf(')')).split(/,\s*/);
-			red2 = nextcolor[0],
+			var red2 = nextcolor[0],
   		green2 = nextcolor[1],
   		blue2	 = nextcolor[2],
   		
-  		r2 = red2 - 52,
-  		g2 = green2 - 25,
-  		b2 = blue2 - 100;
+  		r2 = parseInt (red2 - 20),
+  		g2 = parseInt (green2 - 50),
+  		b2 = parseInt (blue2 - 20);
 
-  		var color3 = "rgb"+ '(' + r2 +','+ g2 +','+ b2 +')';  		
+  		var color3 = "rgb"+ '(' + r2 +','+ g2 +','+ b2 +')';
+
+  		var prevcolor = color3.substring(color3.indexOf('(') + 1, color3.lastIndexOf(')')).split(/,\s*/);
+			var red3 = prevcolor[0],
+  		green3 = prevcolor[1],
+  		blue3	 = prevcolor[2],
+  		
+  		r3 = parseInt (red3 + 7),
+  		g3 = parseInt (green3 - 30),
+  		b3 = parseInt (blue3 + 20);
+
+  		var color4 = "rgb"+ '(' + r3 +','+ g3 +','+ b3 +')';  		
 
   		document.getElementById('rect').style.backgroundColor = color;
   		document.getElementById('rect1').style.backgroundColor = color1;
   		document.getElementById('rect2').style.backgroundColor = color2;
 			document.getElementById('rect3').style.backgroundColor = color3;
+			document.getElementById('rect4').style.backgroundColor = color4;
 
-			console.log(color1);
+			console.log(color);
 
  	
  // 	var col = r;
