@@ -71,22 +71,23 @@ function getRandomColor() {
 	var r,g,b;
 	var letters = $('.clrcode').val();		
   colorsOnly = letters.substring(letters.indexOf('(') + 1, letters.lastIndexOf(')')).split(/,\s*/);
-  var red = colorsOnly[0],
-  		green = colorsOnly[1],
-  		blue = colorsOnly[2],
+  var red = parseInt(colorsOnly[0]),
+  		green = parseInt(colorsOnly[1]),
+  		blue = parseInt(colorsOnly[2]),
 
-  		r = parseInt (red + 40),
-  		g = parseInt (green + 40),
-  		b = parseInt (blue - 40);
+  		r = red + 40,
+  		g = green + 40,
+  		b = blue - 40;
 
   		var color = "rgb"+ '(' + r +','+ g +','+ b +')';
+  		console.log("Color", color);
 
 			var colors = color.substring(color.indexOf('(') + 1, color.lastIndexOf(')')).split(/,\s*/);
-  		var red1 = colors[0],
-  		green1 = colors[1],
-  		blue1 = colors[2],
+  		var red1 =parseInt (colors[0]),
+  		green1 =parseInt (colors[1]),
+  		blue1 =parseInt (colors[2]),
   		
-  		r1 = parseInt (red1 - 500),
+  		r1 = red1 - 30,
   		g1 = green1 - 25,
   		b1 = blue1 - 10;
 
@@ -95,24 +96,24 @@ function getRandomColor() {
   		var color2 = "rgb"+ '(' + red +','+ green +','+ blue +')'; 
   		
   		var nextcolor = color2.substring(color2.indexOf('(') + 1, color2.lastIndexOf(')')).split(/,\s*/);
-			var red2 = nextcolor[0],
-  		green2 = nextcolor[1],
-  		blue2	 = nextcolor[2],
+			var red2 = parseInt (nextcolor[0]),
+  		green2 =parseInt (nextcolor[1]),
+  		blue2	 =parseInt (nextcolor[2]),
   		
-  		r2 = parseInt (red2 - 20),
-  		g2 = parseInt (green2 - 50),
-  		b2 = parseInt (blue2 - 20);
+  		r2 = red2 - 20,
+  		g2 = green2 - 50,
+  		b2 = blue2 - 20;
 
   		var color3 = "rgb"+ '(' + r2 +','+ g2 +','+ b2 +')';
 
   		var prevcolor = color3.substring(color3.indexOf('(') + 1, color3.lastIndexOf(')')).split(/,\s*/);
-			var red3 = prevcolor[0],
-  		green3 = prevcolor[1],
-  		blue3	 = prevcolor[2],
+			var red3 = parseInt (prevcolor[0]),
+  		green3 = parseInt (prevcolor[1]),
+  		blue3	 = parseInt (prevcolor[2]),
   		
-  		r3 = parseInt (red3 + 7),
-  		g3 = parseInt (green3 - 30),
-  		b3 = parseInt (blue3 + 20);
+  		r3 = (red3 + 7),
+  		g3 = (green3 - 30),
+  		b3 = (blue3 + 20);
 
   		var color4 = "rgb"+ '(' + r3 +','+ g3 +','+ b3 +')';  		
 
