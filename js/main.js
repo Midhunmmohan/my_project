@@ -68,17 +68,64 @@ $(document).ready(function(){
 // });
 
 function getRandomColor() {
+	var r,g,b;
 	var letters = $('.clrcode').val();		
-  letters = "rgb(" + r + "," + g + "," + b + ")";
+  colorsOnly = letters.substring(letters.indexOf('(') + 1, letters.lastIndexOf(')')).split(/,\s*/);
+  var red = colorsOnly[0],
+  		green = colorsOnly[1],
+  		blue = colorsOnly[2],
+
+  		r = parseInt (red + 52),
+  		g = green - 25,
+  		b = blue - 100;
+
+  		var color = "rgb"+ '(' + r +','+ g +','+ b +')';
+
+			var colors = color.substring(color.indexOf('(') + 1, color.lastIndexOf(')')).split(/,\s*/);
+  		red1 = colors[0],
+  		green1 = colors[1],
+  		blue1 = colors[2],
+  		
+  		r1 = red1 - 52,
+  		g1 = green1 - 25,
+  		b1 = blue1 - 100;
+
+  		var color1 = "rgb"+ '(' + r1 +','+ g1 +','+ b1 +')';
+
+  		var color2 = "rgb"+ '(' + red +','+ green +','+ blue +')'; 
+  		
+  		var nextcolor = color2.substring(color2.indexOf('(') + 1, color2.lastIndexOf(')')).split(/,\s*/);
+			red2 = nextcolor[0],
+  		green2 = nextcolor[1],
+  		blue2	 = nextcolor[2],
+  		
+  		r2 = red2 - 52,
+  		g2 = green2 - 25,
+  		b2 = blue2 - 100;
+
+  		var color3 = "rgb"+ '(' + r2 +','+ g2 +','+ b2 +')';  		
+
+  		document.getElementById('rect').style.backgroundColor = color;
+  		document.getElementById('rect1').style.backgroundColor = color1;
+  		document.getElementById('rect2').style.backgroundColor = color2;
+			document.getElementById('rect3').style.backgroundColor = color3;
+
+			console.log(color1);
+
  	
- 	var col = r;
- 	var val = g;
- 	var blu = b;
+ // 	var col = r;
+ // 	var val = g;
+ // 	var blu = b;
 
- 	col = Math.random(30);
- 	val = Math.random(25);
- 	blu = Math.random(20);
+ // 	var one = col[Math.random() * 30];
+ // 	var two = val[Math.random() * 25];
+ // 	var three = blu[Math.random() * 20];
 
+ 
+
+	// document.getElementById('rect').style.backgroundColor = color;
+ 	// document.getElementById('rect1').style.backgroundColor = two;
+ 	// document.getElementById('rect2').style.backgroundColor = three;
 }
 
 	
